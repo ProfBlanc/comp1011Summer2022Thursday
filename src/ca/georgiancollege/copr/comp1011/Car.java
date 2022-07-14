@@ -1,9 +1,14 @@
 package ca.georgiancollege.copr.comp1011;
 
+import com.google.gson.annotations.Expose;
+
 public class Car implements Comparable<Car> {
 
+// @Expose(serialize = true, deserialize = true)
  private String make, model;
- private int year;
+
+// @Expose(serialize = false, deserialize = false)
+ private transient int year;
 
  public Car(String make, String model, int year) {
   this.make = make;
