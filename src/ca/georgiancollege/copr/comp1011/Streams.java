@@ -135,9 +135,11 @@ public class Streams {
 
         Stream.of("Ben", "Benny", "Sanskar", "Soham", "Thomas", "Anthony", "Al", "Emma", "Isabella", "Eugene", "Kiwi", "Alex")
                 .filter(x -> x.length() >=4)
-                .filter(x-> {char first = x.toLowerCase().charAt(0);
-                    return first == 'a'||first== 'e' || first == 'i' || first == 'o' || first =='u'; })
+                //.filter(x-> {char first = x.toLowerCase().charAt(0);return first == 'a'||first== 'e' || first == 'i' || first == 'o' || first =='u'; })
+                 .map(String::toLowerCase)
+                .filter(x -> Pattern.matches("^[aeiou]]", x))
                 .map(x -> x + " Jr")
+
                 /*
                 .findFirst()
                 .toString();
